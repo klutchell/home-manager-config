@@ -21,5 +21,19 @@
 
   home.packages = with pkgs; [
     nixpkgs-fmt
+    hadolint
+    shellcheck
+    jq
+    yq
   ];
+
+  programs.gh = {
+    enable = true;
+    settings.git_protocol = "ssh";
+  };
+
+  programs.autojump = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }

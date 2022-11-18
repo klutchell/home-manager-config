@@ -15,13 +15,14 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       homeConfigurations.kyle = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ./zsh.nix ./git.nix ./gh.nix ];
+        modules = [ ./home.nix ./profiles/zsh.nix ./profiles/git.nix ./profiles/balena.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
