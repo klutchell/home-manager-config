@@ -11,7 +11,7 @@
     # "activation" if system doesn't support systemd
     installationType = "activation";
 
-    mount = "/tmp/user/$UID/secrets";
+    mount = "${config.xdg.dataHome}/secrets";
 
     file."aws-config" = {
       # Path to encrypted file tracked by the git repository
