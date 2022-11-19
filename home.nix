@@ -26,7 +26,8 @@
     hadolint
     shellcheck
     jq
-    yq
+    yq-go
+    yadm
   ];
 
   programs.gh = {
