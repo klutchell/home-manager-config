@@ -20,6 +20,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    bash
     git-crypt
     nixpkgs-fmt
     hadolint
