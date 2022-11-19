@@ -20,6 +20,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    git-crypt
     nixpkgs-fmt
     hadolint
     shellcheck
@@ -35,5 +36,9 @@
   programs.autojump = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.gpg = {
+    enable = true;
   };
 }
