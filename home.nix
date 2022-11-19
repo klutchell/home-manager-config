@@ -22,10 +22,12 @@
   home.packages = with pkgs; [
     bash
     git-crypt
-    nixpkgs-fmt
     hadolint
-    shellcheck
+    htop
     jq
+    neofetch
+    nixpkgs-fmt
+    shellcheck
     yq-go
     yadm
   ];
