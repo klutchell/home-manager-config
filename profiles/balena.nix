@@ -25,11 +25,12 @@ let
 in
 {
   home.packages = with pkgs; [
+    awscli2
+    aws-google-auth
     balena-production
     balena-staging
     balena-playground
     k9s
     kubectl
-    saml2aws
   ];
 }

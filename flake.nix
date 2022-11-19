@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    homeage = {
+      url = "github:jordanisaacs/homeage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, homeage, ... }:
 
     let
       system = "aarch64-darwin";
@@ -22,7 +26,14 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ./profiles/zsh.nix ./profiles/git.nix ./profiles/balena.nix ];
+        modules = [
+          homeage.homeManagerModules.homeage
+          ./home.nix
+          ./profiles/zsh.nix
+          ./profiles/git.nix
+          ./profiles/balena.nix
+          ./profiles/secrets.nix
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
