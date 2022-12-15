@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     bash
+    coreutils
     git-crypt
     hadolint
     htop
@@ -28,6 +29,7 @@
     neofetch
     nixpkgs-fmt
     shellcheck
+    wget
     yq-go
     yadm
   ];
