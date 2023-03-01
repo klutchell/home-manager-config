@@ -32,6 +32,10 @@
     wget
     yq-go
     yadm
+    (pkgs.callPackage ./balena-cli.nix {
+      version = "15.0.3";
+      hash = "11dnilgj6xfq20420nmf3dy9zry6sy7gahkvdx1fa701d89di3a3";
+    })
   ];
 
   programs.gh = {

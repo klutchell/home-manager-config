@@ -9,9 +9,9 @@ Installation with Flakes: <https://nix-community.github.io/home-manager/index.ht
 ```bash
 # 1. Clone repository
 # 2. Nix build
-nix build --no-link <flake-uri>#homeConfigurations.kyle.activationPackage
+nix build --no-link .#homeConfigurations.kyle.activationPackage
 # 3. Activate
-"$(nix path-info <flake-uri>#homeConfigurations.kyle.activationPackage)"/activate
+"$(nix path-info .#homeConfigurations.kyle.activationPackage)"/activate
 # 4. Switch
-home-manager switch --flake '<flake-uri>#kyle'
+home-manager switch --flake '.#kyle'
 ```
