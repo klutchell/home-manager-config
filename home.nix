@@ -19,19 +19,20 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-    bash
-    coreutils
-    git-crypt
-    hadolint
-    htop
-    jq
-    neofetch
-    nixpkgs-fmt
-    shellcheck
-    wget
-    yq-go
-    yadm
+  home.packages = [
+    pkgs.bash
+    pkgs.coreutils
+    pkgs.git-crypt
+    pkgs.gnugrep
+    pkgs.hadolint
+    pkgs.htop
+    pkgs.jq
+    pkgs.neofetch
+    pkgs.nixpkgs-fmt
+    pkgs.shellcheck
+    pkgs.wget
+    pkgs.yq-go
+    pkgs.yadm
     (pkgs.callPackage ./balena-cli.nix {
       version = "15.0.3";
       hash = "11dnilgj6xfq20420nmf3dy9zry6sy7gahkvdx1fa701d89di3a3";
@@ -51,5 +52,11 @@
 
   programs.gpg = {
     enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 }

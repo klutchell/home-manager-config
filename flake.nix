@@ -31,7 +31,6 @@
           ./home.nix
           ./profiles/zsh.nix
           ./profiles/git.nix
-          ./profiles/balena.nix
           ./profiles/secrets.nix
         ];
 

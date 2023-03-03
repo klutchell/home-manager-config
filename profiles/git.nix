@@ -9,6 +9,8 @@
       ".DS_Store"
       "*.pyc"
       "node_modules/"
+      ".envrc"
+      ".direnv/"
     ];
 
     userName = "Kyle Harding";
