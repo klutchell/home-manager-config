@@ -29,6 +29,7 @@
     pkgs.jq
     pkgs.neofetch
     pkgs.nixpkgs-fmt
+    pkgs.ripgrep
     pkgs.shellcheck
     pkgs.wget
     pkgs.yq-go
@@ -58,5 +59,10 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

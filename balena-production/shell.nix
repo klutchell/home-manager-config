@@ -12,7 +12,7 @@ pkgs.mkShell {
   shellHook =
     ''
       unset AWS_PROFILE
-      ${pkgs.aws-google-auth}/bin/aws-google-auth -p balena-production -r arn:aws:iam::491725000532:role/federated-admin
+      ${pkgs.aws-google-auth}/bin/aws-google-auth -p balena-production -r arn:aws:iam::491725000532:role/federated-admin -R us-east-1 -I C04e1utuw -S 447476946884 -k --bg-response None -l debug
       export AWS_PROFILE="balena-production"
       ${pkgs.awscli2}/bin/aws --profile balena-production eks --region us-east-1 update-kubeconfig --name production-eks --alias production-eks
       echo "Environment set to balena-production!"

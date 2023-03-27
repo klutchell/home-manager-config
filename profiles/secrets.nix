@@ -13,10 +13,10 @@
 
     mount = "${config.xdg.dataHome}/secrets";
 
-    file."aws-config" = {
-      # Path to encrypted file tracked by the git repository
-      source = ../secrets/aws-config.age;
-      symlinks = [ "${config.home.homeDirectory}/.aws/config" ];
-    };
+    # file."aws-config" = {
+    #   # Path to encrypted file tracked by the git repository
+    #   source = ../secrets/aws-config.age;
+    #   symlinks = [ "${config.home.homeDirectory}/.aws/config" ];
+    # };
   };
 }

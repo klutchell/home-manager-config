@@ -10,7 +10,8 @@
       "*.pyc"
       "node_modules/"
       ".envrc"
-      ".direnv/"
+      ".direnv*"
+      ".devenv*"
     ];
 
     userName = "Kyle Harding";
