@@ -1,4 +1,4 @@
-# https://github.com/pipex/nixpkgs/blob/macbook/balena-cli.nix
+# https://github.com/0xacx/chatGPT-shell-cli
 { pkgs ? import <nixpkgs> { } }:
 pkgs.stdenv.mkDerivation rec {
   pname = "chatgpt-shell-cli";
