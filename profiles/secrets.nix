@@ -18,5 +18,17 @@
     #   source = ../secrets/aws-config.age;
     #   symlinks = [ "${config.home.homeDirectory}/.aws/config" ];
     # };
+
+    file."github-pat" = {
+      # Path to encrypted file tracked by the git repository
+      source = ../secrets/github_pat.age;
+      symlinks = [ "${config.home.homeDirectory}/.github_pat" ];
+    };
+
+    file."openai-pat" = {
+      # Path to encrypted file tracked by the git repository
+      source = ../secrets/openai_pat.age;
+      symlinks = [ "${config.home.homeDirectory}/.openai_pat" ];
+    };
   };
 }
