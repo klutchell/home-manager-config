@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  # gpt-review = pkgs.callPackage ./gpt-review/default.nix {
+  #   inherit (pkgs) lib fetchFromGitHub;
+  #   python = pkgs.python311;
+  #   buildPythonPackage = pkgs.python311.pkgs.buildPythonPackage;
+  #   flit = pkgs.python311.pkgs.flit;
+  #   flit_core = pkgs.python311.pkgs.flit_core;
+  # };
+  gpt-review-venv = pkgs.callPackage ./gpt-review-venv/default.nix {};
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -36,7 +46,9 @@
     pkgs.yq-go
     pkgs.yadm
     (pkgs.callPackage ./balena-cli.nix {})
-    (pkgs.callPackage ./chatgpt-shell-cli.nix {})
+    gpt-review-venv
+    # (pkgs.callPackage ./chatgpt-shell-cli.nix {})
+    # (pkgs.callPackage ./gpt-review/default.nix {})
   ];
 
   programs.gh = {
