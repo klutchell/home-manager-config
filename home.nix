@@ -9,6 +9,10 @@ let
   #   flit_core = pkgs.python311.pkgs.flit_core;
   # };
   gpt-review-venv = pkgs.callPackage ./gpt-review-venv/default.nix {};
+  balena-cli = pkgs.callPackage ./balena-cli/default.nix {
+      version = "16.5.2";
+      hash = "sha256-U77S7oPPJaKaQu8r3XJJ4bFBQ771qE7/Z9NVfoyK4gE=";
+  };
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -45,10 +49,8 @@ in
     pkgs.wget
     pkgs.yq-go
     pkgs.yadm
-    (pkgs.callPackage ./balena-cli.nix {})
+    balena-cli
     gpt-review-venv
-    # (pkgs.callPackage ./chatgpt-shell-cli.nix {})
-    # (pkgs.callPackage ./gpt-review/default.nix {})
   ];
 
   programs.gh = {

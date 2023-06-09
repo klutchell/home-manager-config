@@ -9,6 +9,24 @@
     enableSyntaxHighlighting = true;
     autocd = true;
 
+    # https://checkoway.net/musings/nix/
+    envExtra = ''
+      [[ -o login ]] && export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    '';
+
+    # https://checkoway.net/musings/nix/
+    profileExtra = ''
+      # Set PATH, MANPATH, etc., for Homebrew.
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      # export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin"
+
+      # Nix
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fi
+      # End Nix
+    '';
+
     oh-my-zsh = {
       enable = true;
       plugins = [
