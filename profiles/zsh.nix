@@ -19,7 +19,9 @@
       # Set PATH, MANPATH, etc., for Homebrew.
       eval "$(/opt/homebrew/bin/brew shellenv)"
       # export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin"
+    '';
 
+    initExtra = ''
       # Nix
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
