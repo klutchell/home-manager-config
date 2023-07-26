@@ -6,7 +6,9 @@
 
     enableCompletion = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
     autocd = true;
 
     # https://checkoway.net/musings/nix/
