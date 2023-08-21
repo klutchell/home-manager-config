@@ -28,6 +28,7 @@ pkgs.mkShell {
       })
     ]))
     (pkgs.writeShellScriptBin "balena-production" ''
+      set -e
       unset AWS_PROFILE
       
       # aws-google-auth \
@@ -40,7 +41,7 @@ pkgs.mkShell {
         --profile balena-production \
         --region us-east-1 \
         --session-duration 43200 \
-        --idp-arn arn:aws:iam::491725000532:saml-provider/google \
+        --idp-arn arn:aws:iam::491725000532:saml-provider/Google \
         --role-arn arn:aws:iam::491725000532:role/federated-admin
       
       export AWS_PROFILE="balena-production"
@@ -51,6 +52,7 @@ pkgs.mkShell {
       echo "Environment set to balena-production!"
     '')
     (pkgs.writeShellScriptBin "balena-staging" ''
+      set -e
       unset AWS_PROFILE
       
       # aws-google-auth \
@@ -63,7 +65,7 @@ pkgs.mkShell {
         --profile balena-staging \
         --region us-east-1 \
         --session-duration 43200 \
-        --idp-arn arn:aws:iam::567579488761:saml-provider/google \
+        --idp-arn arn:aws:iam::567579488761:saml-provider/Google \
         --role-arn arn:aws:iam::567579488761:role/federated-admin
       
       export AWS_PROFILE="balena-staging"
@@ -74,6 +76,7 @@ pkgs.mkShell {
       echo "Environment set to balena-staging!"
     '')
     (pkgs.writeShellScriptBin "balena-playground" ''
+      set -e
       unset AWS_PROFILE
       
       # aws-google-auth \
@@ -86,7 +89,7 @@ pkgs.mkShell {
         --profile balena-playground \
         --region us-east-1 \
         --session-duration 43200 \
-        --idp-arn arn:aws:iam::240706700173:saml-provider/google \
+        --idp-arn arn:aws:iam::240706700173:saml-provider/Google \
         --role-arn arn:aws:iam::240706700173:role/federated-admin
       
       export AWS_PROFILE="balena-playground"
