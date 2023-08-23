@@ -43,6 +43,7 @@ in
     pkgs.jq
     pkgs.neofetch
     pkgs.nixpkgs-fmt
+    pkgs.nodejs-18_x
     pkgs.ripgrep
     pkgs.shellcheck
     pkgs.shfmt
