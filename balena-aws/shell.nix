@@ -27,7 +27,7 @@ pkgs.mkShell {
         ];
       })
     ]))
-    (pkgs.writeShellScriptBin "balena-production" ''
+    (pkgs.writeShellScriptBin "balena-aws-production" ''
       set -e
       unset AWS_PROFILE
       
@@ -51,7 +51,7 @@ pkgs.mkShell {
 
       echo "Environment set to balena-production!"
     '')
-    (pkgs.writeShellScriptBin "balena-staging" ''
+    (pkgs.writeShellScriptBin "balena-aws-staging" ''
       set -e
       unset AWS_PROFILE
       
@@ -75,7 +75,7 @@ pkgs.mkShell {
 
       echo "Environment set to balena-staging!"
     '')
-    (pkgs.writeShellScriptBin "balena-playground" ''
+    (pkgs.writeShellScriptBin "balena-aws-playground" ''
       set -e
       unset AWS_PROFILE
       
