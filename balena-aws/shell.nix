@@ -49,6 +49,8 @@ pkgs.mkShell {
       aws --profile balena-production eks --region us-east-1 update-kubeconfig \
         --name production-eks --alias production-eks
 
+      kubectl config use-context production-eks
+
       echo "Environment set to balena-production!"
     '')
     (pkgs.writeShellScriptBin "balena-aws-staging" ''
@@ -73,6 +75,8 @@ pkgs.mkShell {
       aws --profile balena-staging eks --region us-east-1 update-kubeconfig \
         --name staging-eks --alias staging-eks
 
+      kubectl config use-context staging-eks
+
       echo "Environment set to balena-staging!"
     '')
     (pkgs.writeShellScriptBin "balena-aws-playground" ''
@@ -96,6 +100,8 @@ pkgs.mkShell {
 
       aws --profile balena-playground eks --region us-east-1 update-kubeconfig \
         --name playground-eks --alias playground-eks
+
+      kubectl config use-context playground-eks
 
       echo "Environment set to balena-playground!"
     '')
