@@ -8,6 +8,7 @@ pkgs.mkShell {
     pkgs.kubectl
     pkgs.arkade
     pkgs.saml2aws
+    pkgs.fluxcd
 
     (pkgs.python3.withPackages (p: with p; [
       (buildPythonPackage rec {
