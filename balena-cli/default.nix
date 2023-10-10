@@ -1,9 +1,9 @@
 # https://github.com/pipex/nixpkgs/blob/macbook/balena-cli.nix
-{ pkgs ? import <nixpkgs> { }, version, hash }:
+{ pkgs ? import <nixpkgs> { } }:
 pkgs.stdenv.mkDerivation rec {
   name = "balena-cli";
-  # version = "16.5.1";
-  # hash = "sha256-eW6WtS4BMvQDJ9zEJWniXZVqfHPD2N0NZt90dBfhxBI=";
+  version = "17.1.5";
+  hash = "sha256-wq4ceJ9QfcL/GsglboLVw+C4/bJfQTPm5YXusQVge+Y=";
 
   src = pkgs.fetchzip {
     url = "https://github.com/balena-io/balena-cli/releases/download/v${version}/balena-cli-v${version}-macOS-x64-standalone.zip";
